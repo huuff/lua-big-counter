@@ -1,3 +1,4 @@
 require("inc_big_counter")
 
-print(inc_big_counter("999"))
+local input = arg[1]
+print(inc_big_counter(input))
