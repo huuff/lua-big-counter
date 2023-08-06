@@ -19,6 +19,10 @@ function inc_big_counter(counter)
     incr_next = incr_next - 1
   end
 
+  if carrying then
+    table.insert(counter_as_table, 1, "1")
+  end
+
   local output = ""
 
   for i, v in pairs(counter_as_table) do
@@ -28,4 +32,4 @@ function inc_big_counter(counter)
   print(output)
 end
 
-inc_big_counter("123456789")
+inc_big_counter("999")
