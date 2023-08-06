@@ -12,7 +12,7 @@
     in
   {
 
-    devshell.${system} = pkgs.mkShell {
+    devShell.${system} = pkgs.mkShell {
       buildInputs = with pkgs; [
         lua
       ];
