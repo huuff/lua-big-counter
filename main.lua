@@ -5,10 +5,27 @@ function inc_big_counter(counter)
 
   local incr_next = #counter_as_table
 
-  print("The size of the table is " .. incr_next)
-  --for i, v in pairs(counter_as_table) do
-    --print(i, v);
-  --end
+  local carrying = true
+  while counter_as_table[incr_next] and carrying do
+    local incremented_digit = counter_as_table[incr_next] + 1
+
+    if incremented_digit < 10 
+    then carrying = false 
+    else incremented_digit = 0
+    end
+
+    counter_as_table[incr_next] = incremented_digit
+
+    incr_next = incr_next - 1
+  end
+
+  local output = ""
+
+  for i, v in pairs(counter_as_table) do
+    output = output .. v
+  end
+
+  print(output)
 end
 
 inc_big_counter("123456789")
