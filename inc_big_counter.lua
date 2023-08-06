@@ -1,4 +1,3 @@
-
 function inc_big_counter(counter) 
   local counter_as_table = {}
   counter:gsub(".", function(c) table.insert(counter_as_table, c) end)
@@ -29,7 +28,5 @@ function inc_big_counter(counter)
     output = output .. v
   end
 
-  print(output)
+  return output
 end
-
-inc_big_counter("999")
